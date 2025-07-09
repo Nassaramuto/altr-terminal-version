@@ -1,0 +1,187 @@
+/* Rep Counter */
+.rep-counter {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px 40px;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.rep-count {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(135deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.rep-label {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Angle Display */
+.angle-display {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.angle-value {
+    color: #4ade80;
+    min-width: 50px;
+    text-align: right;
+}
+
+/* Rep Quality Indicator */
+.rep-quality {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.rep-quality.visible {
+    opacity: 1;
+}
+
+.rep-quality.good {
+    background: rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+    border: 2px solid #4ade80;
+}
+
+.rep-quality.partial {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+    border: 2px solid #fbbf24;
+}
+
+.rep-quality.ready {
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+    border: 2px solid #60a5fa;
+}
+
+/* Status Message */
+.status-message {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 0 20px;
+    max-width: 90%;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.05); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+.rep-counter.pulse {
+    animation: pulse 0.3s ease;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+    .rep-counter {
+        top: 30px;
+        padding: 15px 30px;
+    }
+    
+    .rep-count {
+        font-size: 56px;
+    }
+    
+    .rep-label {
+        font-size: 14px;
+    }
+    
+    .angle-display {
+        bottom: 120px;
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+    
+    .rep-quality {
+        bottom: 60px;
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+    
+    .status-message {
+        font-size: 12px;
+        bottom: 15px;
+    }
+}
+
+/* Landscape Mode Adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+    .rep-counter {
+        top: 20px;
+        padding: 10px 25px;
+    }
+    
+    .rep-count {
+        font-size: 48px;
+    }
+    
+    .angle-display {
+        bottom: 80px;
+        font-size: 18px;
+    }
+    
+    .rep-quality {
+        bottom: 40px;
+    }
+    
+    .status-message {
+        display: none;
+    }
+}
+
+/* Dark Mode Animation for Rep Counter */
+.rep-counter {
+    transition: all 0.3s ease;
+}
+
+.rep-counter.active {
+    background: rgba(74, 222, 128, 0.2);
+    border: 2px solid rgba(74, 222, 128, 0.5);
+}

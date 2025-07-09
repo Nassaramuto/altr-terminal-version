@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>ALTR - Push-up Tracker</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- MediaPipe -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Video Container -->
+    <div class="video-container">
+        <video class="input-video" autoplay playsinline></video>
+        <canvas class="output-canvas"></canvas>
+    </div>
+    
+    <!-- UI Overlay -->
+    <div class="ui-overlay">
+        <!-- Rep Counter -->
+        <div class="rep-counter">
+            <div class="rep-count" id="repCount">0</div>
+            <div class="rep-label">Push-ups</div>
+        </div>
+        
+        <!-- Angle Display -->
+        <div class="angle-display" id="angleDisplay">
+            <span class="angle-value">--</span>°
+        </div>
+        
+        <!-- Rep Quality Indicator -->
+        <div class="rep-quality" id="repQuality">
+            <span class="quality-text">Ready</span>
+        </div>
+        
+        <!-- Status Message -->
+        <div class="status-message" id="statusMessage">
+            Position yourself for push-ups
+        </div>
+    </div>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Initializing camera...</p>
+        </div>
+    </div>
+    
+    <!-- JavaScript Modules -->
+    <script src="js/utils.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/pose-detector.js"></script>
+    <script src="js/pushup-tracker.js"></script>
+    <script src="js/ui-controller.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
